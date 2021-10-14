@@ -1,0 +1,67 @@
+.jumbotron {
+  text-align: center;
+  /* background-image: url("握手の画像２.jpeg"); */
+  background-size: cover;
+  background-position: 50% 30%;
+}
+.catch-copy {
+  font-family: "游明朝", "游明朝体", serif;
+  font-weight: 600;
+  font-size: 50px;
+  text-shadow: 0 0 15px white;
+}
+  /* .searchall-form {
+    font-family: "游明朝", "游明朝体", serif;
+    font-weight: 60;
+    margin: 20px 0;
+    .search-form {
+      margin: 0 2px;
+      height: 30px;
+      width: 300px;
+      border: none;
+      box-shadow: 0 0 8px gray;
+    } */
+    /* .search-btn {
+      padding: 2px 12px;
+      // border: 0px none;
+      height: 30px;
+      // background-color: #3988fd;
+      // border-radius: 10px;
+      // margin: 0 2px;
+      border: 1px solid #ccc;
+      background: #f1e767;
+      background: -webkit-gradient(linear, left top, left bottom, from(#fdfbfb), to(#ebedee));
+      background: -webkit-linear-gradient(top, #fdfbfb 0%, #ebedee 100%);
+      background: linear-gradient(to bottom, #fdfbfb 0%, #ebedee 100%);
+      -webkit-box-shadow: inset 1px 1px 1px #fff;
+      box-shadow: inset 1px 1px 1px #fff;
+    } */
+    /* .search-btn:hover {
+      background: -webkit-gradient(linear, left bottom, left top, from(#fdfbfb), to(#ebedee));
+      background: -webkit-linear-gradient(bottom, #fdfbfb 0%, #ebedee 100%);
+      background: linear-gradient(to top, #fdfbfb 0%, #ebedee 100%);
+    } */
+  /* } */
+  /* .serch {
+    width: 500px;
+  }
+  p {
+    margin: 20px 0 5px 0;
+  } */
+
+
+.spots-area {
+  padding: 16px 0 10px 0;
+  margin-bottom: 15px;
+  box-shadow: 0 0 4px gray;
+}
+
+.wokers-area {
+  padding: 16px 0 10px 0;
+  box-shadow: 0 0 4px gray;
+}
+
+
+.listtitle {
+  text-align: center;
+}
