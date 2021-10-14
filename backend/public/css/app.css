@@ -4,6 +4,7 @@
   background-size: cover;
   background-position: 50% 30%;
 }
+
 .catch-copy {
   font-family: "游明朝", "游明朝体", serif;
   font-weight: 600;
@@ -22,8 +23,34 @@
   box-shadow: 0 0 4px gray;
 }
 
-
 .listtitle {
   text-align: center;
+}
+.navbar {
+  margin: 2rem 0 2.5rem 0;
+}
+
+.my-navbar {
+  align-items: center;
+  background: #333;
+  display: flex;
+  height: 6rem;
+  justify-content: space-between;
+  padding: 0 2%;
+  margin-bottom: 3rem;
+}
+
+.my-navbar-brand {
+  font-size: 18px;
+}
+
+.my-navbar-brand,
+.my-navbar-item {
+  color: #8c8c8c;
+}
+
+.my-navbar-brand:hover,
+a.my-navbar-item:hover {
+  color: #ffffff;
 }
 
