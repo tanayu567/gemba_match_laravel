@@ -1,0 +1,29 @@
+.jumbotron {
+  text-align: center;
+  /* background-image: url("握手の画像２.jpeg"); */
+  background-size: cover;
+  background-position: 50% 30%;
+}
+.catch-copy {
+  font-family: "游明朝", "游明朝体", serif;
+  font-weight: 600;
+  font-size: 50px;
+  text-shadow: 0 0 15px white;
+}
+
+.spots-area {
+  padding: 16px 0 10px 0;
+  margin-bottom: 15px;
+  box-shadow: 0 0 4px gray;
+}
+
+.wokers-area {
+  padding: 16px 0 10px 0;
+  box-shadow: 0 0 4px gray;
+}
+
+
+.listtitle {
+  text-align: center;
+}
+
