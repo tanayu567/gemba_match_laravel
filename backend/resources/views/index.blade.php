@@ -4,7 +4,7 @@
   <div class="index">
     <div class="center jumbotron"> 
       <div class="searchall"> 
-        <h1 class="catch-copy">出会い、そして創造へ</h1> 
+        <h1 class="catch-copy">トップページ</h1> 
         <!-- <% if !(logged_in?) || (current_user.email == "guest@example.com" || current_user.profession == "worker") %> -->
           <!-- <div class="searchall-form">
             <%= form_with url: search_spots_path, local: true, class: "search-pair", method: :get do |form| %>
