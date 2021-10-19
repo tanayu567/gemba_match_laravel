@@ -25,7 +25,6 @@ class MultiAuthTableSeeder extends Seeder
                 'license' => '１級電気工事士'
             ],
 
-            // ここに追加できます
         ];
 
         foreach($init_workers as $init_worker) {
