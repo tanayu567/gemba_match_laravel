@@ -19,3 +19,4 @@ Route::prefix('workers')->middleware('auth:workers')->group(function(){
 Route::prefix('companies')->middleware('auth:companies')->group(function(){
     Route::get('dashboard', function(){ return '事業所でログイン完了'; });
 });
+
