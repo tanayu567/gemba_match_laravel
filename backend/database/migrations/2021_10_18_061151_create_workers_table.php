@@ -22,6 +22,7 @@ class CreateWorkersTable extends Migration
             $table->string('erea');
             $table->string('license');
             $table->timestamps();
+            $table->rememberToken();
         });
     }
 

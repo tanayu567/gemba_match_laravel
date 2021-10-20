@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MultiAuthController extends Controller
 {
@@ -15,7 +16,7 @@ class MultiAuthController extends Controller
         $credentials = $request->only(['email', 'password']);
         $guard = $request->guard;
 
-        if(\Auth::guard($guard)->attempt($credentials)) {
+        if(Auth::guard($guard)->attempt($credentials)) {
 
             return redirect($guard .'/dashboard');
 

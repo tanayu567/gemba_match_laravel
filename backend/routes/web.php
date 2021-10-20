@@ -2,12 +2,14 @@
 
 Route::get('/', 'HomeController@index')->name('home');
 
-// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-//     return view('dashboard');
-// })->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
 
-Route::get('multi_login', [\App\Http\Controllers\MultiAuthController::class, 'showLoginForm']);
-Route::post('multi_login', [\App\Http\Controllers\MultiAuthController::class, 'login']);
+// Route::get('multi_login', [\App\Http\Controllers\MultiAuthController::class, 'showLoginForm']);
+// Route::post('multi_login', [\App\Http\Controllers\MultiAuthController::class, 'login']);
+Route::get('multi_login', 'MultiAuthController@showLoginForm');
+Route::post('multi_login', 'MultiAuthController@login');
 
 Route::get('multi_login/logout', [\App\Http\Controllers\MultiAuthController::class, 'logout']);
 
