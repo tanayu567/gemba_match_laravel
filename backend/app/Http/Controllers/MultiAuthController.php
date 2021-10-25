@@ -16,11 +16,9 @@ class MultiAuthController extends Controller
         $credentials = $request->only(['email', 'password']);
         $guard = $request->guard;
 
-        logger('test', [$guard]);
+        if(\Auth::guard($guard)->attempt($credentials)) {
 
-        if(Auth::guard($guard)->attempt($credentials)) {
-
-            return redirect($guard .'/dashboard');
+            return redirect($guard .'/dashboard'); // ログインしたらリダイレクト
 
         }
 
