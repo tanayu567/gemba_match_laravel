@@ -16,6 +16,6 @@ class WorkerLoginResponse implements LoginResponseContract
     {
         return $request->wantsJson()
             ? response()->json(['two_factor' => false])
-            : redirect()->intended('woker/dashboard'); // ログイン後に遷移させたいリダイレクト先を指定
+            : redirect()->intended('worker/dashboard'); // ログイン後に遷移させたいリダイレクト先を指定
     }
 }

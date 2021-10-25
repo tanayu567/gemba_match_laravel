@@ -3,7 +3,7 @@
 namespace App\Http\Middleware;
 
 use Illuminate\Auth\Middleware\Authenticate as Middleware;
-use Illuminate\Support\Str;
+
 
 class Authenticate extends Middleware
 {
@@ -16,10 +16,9 @@ class Authenticate extends Middleware
     protected function redirectTo($request)
     {
         if (! $request->expectsJson()) {
-            $uri = $request->path();
 
-            if(Str::startsWith($uri, ['workers/', 'companies/'])) {
-                return 'multi_login';
+            if(!$request->is('worker/*')) {
+                return route('worker.login');
             }
 
             return route('login');
