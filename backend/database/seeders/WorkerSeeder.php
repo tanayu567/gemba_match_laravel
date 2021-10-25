@@ -20,7 +20,7 @@ class WorkerSeeder extends Seeder
             'email' => 'sanma@example.com',
             'password' => Hash::make('secret'),
             'experience_year' => '10',
-            'erea' => '東京',
+            'area' => '東京',
             'license' => '１級電気工事士'
         ]);
     }

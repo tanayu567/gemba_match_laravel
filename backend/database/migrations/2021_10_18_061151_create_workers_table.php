@@ -20,7 +20,7 @@ class CreateWorkersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->integer('experience_year');
-            $table->string('erea');
+            $table->string('area');
             $table->string('license');
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
