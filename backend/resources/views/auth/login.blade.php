@@ -12,7 +12,7 @@
             </div>
         @endif
 
-        <form method="POST" action="{{ isset($guard) ? route('worker.login') : route('login') }}">
+        <form method="POST" action="{{ $guard == 'worker' ? route('worker.login') : route('company.login') }}">
             @csrf
 
             <div>

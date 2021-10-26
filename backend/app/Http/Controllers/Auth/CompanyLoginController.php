@@ -6,13 +6,13 @@ use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\StatefulGuard;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Pipeline;
-use App\Actions\Worker\AttemptToAuthenticate;
+use App\Actions\Company\AttemptToAuthenticate;
 use Laravel\Fortify\Actions\PrepareAuthenticatedSession;
-use App\Responses\WorkerLoginResponse;
+use App\Responses\CompanyLoginResponse;
 use Laravel\Fortify\Contracts\LogoutResponse;
 use Laravel\Fortify\Http\Requests\LoginRequest;
 
-class LoginController extends Controller
+class CompanyLoginController extends Controller
 {
     /**
      * The guard implementation.
@@ -39,7 +39,7 @@ class LoginController extends Controller
      */
     public function create()
     {
-        return view('auth.login', ['guard' => 'worker']);
+        return view('auth.login', ['guard' => 'company']);
     }
 
     /**
@@ -51,7 +51,7 @@ class LoginController extends Controller
     public function store(LoginRequest $request)
     {
         return $this->loginPipeline($request)->then(function ($request) {
-            return app(WorkerLoginResponse::class);
+            return app(CompanyLoginResponse::class);
         });
     }
 

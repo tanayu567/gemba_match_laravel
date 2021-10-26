@@ -177,6 +177,7 @@ return [
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
         App\Providers\WorkerLoginServiceProvider::class,
+        App\Providers\CompanyLoginServiceProvider::class,
 
     ],
 

@@ -2,13 +2,13 @@
 
 namespace App\Providers;
 
-use App\Http\Controllers\Auth\WorkerLoginController;
+use App\Http\Controllers\Auth\CompanyLoginController;
 use Illuminate\Contracts\Auth\StatefulGuard;
 use Illuminate\Support\Facades\Auth;
-use App\Actions\Worker\AttemptToAuthenticate;
+use App\Actions\Company\AttemptToAuthenticate;
 use Illuminate\Support\ServiceProvider;
 
-class WorkerLoginServiceProvider extends ServiceProvider
+class CompanyLoginServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
@@ -18,10 +18,10 @@ class WorkerLoginServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app
-            ->when([WorkerLoginController::class, AttemptToAuthenticate::class])
+            ->when([CompanyLoginController::class, AttemptToAuthenticate::class])
             ->needs(StatefulGuard::class)
             ->give(function () {
-                return Auth::guard('worker');
+                return Auth::guard('company');
             });
     }
 
