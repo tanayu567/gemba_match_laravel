@@ -16,6 +16,7 @@ class WorkerRegisterResponse implements RegisterResponseContract
     {
         return $request->wantsJson()
             ? new JsonResponse('', 201)
-            : redirect()->intended('worker/dashboard'); // ログイン後に遷移させたいリダイレクト先を指定
+            : redirect()->intended('worker/dashboard'); 
+            // ログイン後に遷移させたいリダイレクト先を指定
     }
 }
