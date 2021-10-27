@@ -20,15 +20,6 @@ Route::prefix('worker')->group(function () {
     });
 });
 
-Route::prefix('company')->group(function () {
-    Route::get('login', [CompanyLoginController::class, 'create'])->name('company.login');
-    Route::post('login', [CompanyLoginController::class, 'store']);
-
-    Route::middleware('auth:company')->group(function () {
-        Route::get('dashboard', [CompanyDashboardController::class, 'index']);
-    });
-});
-
 Route::middleware(['auth:web', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
