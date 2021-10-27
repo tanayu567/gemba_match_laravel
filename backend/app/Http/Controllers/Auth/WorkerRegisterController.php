@@ -6,8 +6,8 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Contracts\Auth\StatefulGuard;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Laravel\Fortify\Contracts\CreatesNewUsers;
-use Laravel\Fortify\Contracts\RegisterResponse;
+use App\Actions\Worker\CreateNewWorker;
+use App\Responses\WorkerRegisterResponse;
 use Laravel\Fortify\Contracts\RegisterViewResponse;
 
 class WorkerRegisterController extends Controller
@@ -33,8 +33,7 @@ class WorkerRegisterController extends Controller
     /**
      * Show the registration view.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Laravel\Fortify\Contracts\RegisterViewResponse
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function create()
     {
@@ -45,16 +44,16 @@ class WorkerRegisterController extends Controller
      * Create a new registered user.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \Laravel\Fortify\Contracts\CreatesNewUsers  $creator
-     * @return \Laravel\Fortify\Contracts\RegisterResponse
+     * @param  App\Actions\Worker\CreateNewWorker  $creator
+     * @return App\Responses\WorkerRegisterResponse
      */
     public function store(Request $request,
-                          CreatesNewUsers $creator): RegisterResponse
+                          CreateNewWorker $creator): WorkerRegisterResponse
     {
         event(new Registered($user = $creator->create($request->all())));
 
         $this->guard->login($user);
 
-        return app(RegisterResponse::class);
+        return app(WorkerRegisterResponse::class);
     }
 }
