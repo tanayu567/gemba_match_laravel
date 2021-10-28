@@ -16,6 +16,8 @@
     <div class="company-list">
         @foreach($users as $user)
             <p>{{ $user->name }}</p>
+            <p>{{ $user->founding_year }} 年</p>
+            <p>{{ $user->area }}</p>
         @endforeach
     </div>
     
