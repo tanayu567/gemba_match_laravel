@@ -12,4 +12,11 @@
             </div>
         </div>
     </div>
+
+    <div class="company-list">
+        @foreach($users as $user)
+            <p>{{ $user->name }}</p>
+        @endforeach
+    </div>
+    
 </x-app-layout>

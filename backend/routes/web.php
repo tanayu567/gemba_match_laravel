@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\WorkerLoginController;
 use App\Http\Controllers\Auth\CompanyLoginController;
 use App\Http\Controllers\Auth\WorkerRegisterController;
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
 
 // Route::get('/', 'HomeController@index')->name('home');
 Route::get('/', function () {
@@ -26,6 +27,8 @@ Route::prefix('worker')->group(function () {
 
 
 Route::middleware(['auth:web', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
+    $users = User::all();
+
+    return view('dashboard', ['users' => $users,]);
 })->name('dashboard');
 
