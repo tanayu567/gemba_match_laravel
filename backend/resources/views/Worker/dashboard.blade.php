@@ -13,4 +13,10 @@
             </div>
         </div>
     </div>
+
+    <div class="company-list">
+        @foreach($workers as $worker)
+            <p>{{ $worker->name }}</p>
+        @endforeach
+    </div>
 </x-app-layout>
