@@ -17,6 +17,8 @@
     <div class="company-list">
         @foreach($workers as $worker)
             <p>{{ $worker->name }}</p>
+            <p>{{ $worker->experience_year }} 年</p>
+            <p>{{ $worker->area }}</p>
         @endforeach
     </div>
 </x-app-layout>
