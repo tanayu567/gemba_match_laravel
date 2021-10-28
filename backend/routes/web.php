@@ -5,6 +5,7 @@ use App\Http\Controllers\CompanyDashboardController;
 use App\Http\Controllers\Auth\WorkerLoginController;
 use App\Http\Controllers\Auth\CompanyLoginController;
 use App\Http\Controllers\Auth\WorkerRegisterController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
 
@@ -31,4 +32,6 @@ Route::middleware(['auth:web', 'verified'])->get('/dashboard', function () {
 
     return view('dashboard', ['users' => $users,]);
 })->name('dashboard');
+
+Route::get('/user/{id}', [UserController::class, 'show'])->name('users.profile');
 

@@ -15,7 +15,9 @@
 
     <div class="company-list">
         @foreach($users as $user)
-            <p>{{ $user->name }}</p>
+            <a href="{{ route('users.profile', ['id' => $user->id]) }}">
+                <p>{{ $user->name }}</p>
+            </a>
             <p>{{ $user->founding_year }} 年</p>
             <p>{{ $user->area }}</p>
         @endforeach
