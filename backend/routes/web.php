@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\WorkerLoginController;
 use App\Http\Controllers\Auth\CompanyLoginController;
 use App\Http\Controllers\Auth\WorkerRegisterController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\WorkerController;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
 
@@ -20,6 +21,8 @@ Route::prefix('worker')->group(function () {
 
     Route::get('register', [WorkerRegisterController::class, 'create'])->name('worker.register');
     Route::post('register', [WorkerRegisterController::class, 'store']);
+
+    Route::get('/worker/{id}', [WorkerController::class, 'show'])->name('workers.profile');
 
     Route::middleware('auth:worker')->group(function () {
         Route::get('dashboard', [WorkerDashboardController::class, 'index']);
