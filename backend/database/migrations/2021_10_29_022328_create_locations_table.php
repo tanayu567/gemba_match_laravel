@@ -14,12 +14,12 @@ class CreateLocationsTable extends Migration
     public function up()
     {
         Schema::create('locations', function (Blueprint $table) {
-            $table->bigInteger('id');
+            $table->id();
             $table->bigInteger('user_id')->unsigned();
             $table->string('name');
             $table->string('address')->nullable();
-            $table->date('start_data')->nullable();
-            $table->date('completion_data')->nullable();
+            $table->date('start_date')->nullable();
+            $table->date('completion_date')->nullable();
             $table->integer('price')->nullable();
             $table->timestamps();
 

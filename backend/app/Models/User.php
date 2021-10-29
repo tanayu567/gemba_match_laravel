@@ -63,4 +63,9 @@ class User extends Authenticatable
     protected $dispatchesEvents = [
         'created' => UserCreated::class
     ];
+
+    public function locations()
+    {
+        return $this->hasMany('App\Models\Location');
+    }
 }

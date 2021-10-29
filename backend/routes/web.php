@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\CompanyLoginController;
 use App\Http\Controllers\Auth\WorkerRegisterController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WorkerController;
+use App\Http\Controllers\LocationController;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
 
@@ -29,12 +30,13 @@ Route::prefix('worker')->group(function () {
     });
 });
 
-
 Route::middleware(['auth:web', 'verified'])->get('/dashboard', function () {
     $users = User::all();
 
     return view('dashboard', ['users' => $users,]);
 })->name('dashboard');
-
 Route::get('/user/{id}', [UserController::class, 'show'])->name('users.profile');
+
+Route::get('locations/create', [LocationController::class, 'showCreateForm'])->name('locations.create');
+Route::post('locations/create', [LocationController::class, 'create']);
 
