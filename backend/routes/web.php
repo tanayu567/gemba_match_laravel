@@ -39,4 +39,5 @@ Route::get('/user/{id}', [UserController::class, 'show'])->name('users.profile')
 
 Route::get('locations/create', [LocationController::class, 'showCreateForm'])->name('locations.create');
 Route::post('locations/create', [LocationController::class, 'create']);
+Route::get('locations/{location}', [LocationController::class, 'index'])->name('locations.index');
 

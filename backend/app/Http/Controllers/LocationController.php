@@ -23,6 +23,15 @@ class LocationController extends Controller
         $location->price = $request->price;
         Auth::user()->locations()->save($location);
 
-        return redirect()->intended('/');
+        return redirect()->route('locations.index');
+    }
+
+    public function index(Location $location)
+    {
+        $locations = Auth::user()->locations()->get();
+
+        return view('Location.index', [
+            'locations' => $locations,
+        ]);
     }
 }
