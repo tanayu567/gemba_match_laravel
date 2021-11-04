@@ -1,0 +1,98 @@
+@startuml table
+hide circle
+
+  entity "Worker" {
+    *id: bigint
+    --
+    *name: string
+    *email: string
+    *password: string
+    experience_year: string
+    area: string
+    license: string
+    *created_at: timestamp
+    *updated_at: timestamp
+  }
+
+  entity "Company" {
+    *id: bigint
+    --
+    *name: string
+    *email: string
+    *password: string
+    founding_year: string
+    area: string
+    license: string
+    *created_at: timestamp
+    *updated_at: timestamp
+  }
+
+  entity "Worker_follow" {
+    *id: bigint
+    --
+    *worker_id: bigint <<FK>>
+    *company_id: bigint <<FK>>
+    *created_at: timestamp
+    *updated_at: timestamp
+  }
+
+  entity "Company_follow" {
+    *id: bigint
+    --
+    *company_id: bigint <<FK>>
+    *worker_id: bigint <<FK>>
+    *created_at: timestamp
+    *updated_at: timestamp
+  }
+
+  entity "Location" {
+    *id: bigint
+    --
+    *company_id: bigint <<FK>>
+    *name: string
+    address: string
+    start_data: date
+    completion_date: date
+    price: int
+    *created_at: timestamp
+    *updated_at: timestamp
+  }
+
+  entity "Like" {
+    *id: bigint
+    *worker_id: bigint <<FK>>
+    *location_id: bigint <<FK>>
+    *created_at: timestamp
+    *updated_at: timestamp
+  }
+
+  entity "Comment" {
+    *id: bigint
+    --
+    worker_id: bigint <<FK>>
+    company_id: bigint <<FK>>
+    *lacation_id: bigint <<FK>>
+    *text: text
+    *created_at: timestamp
+    *updated_at: timestamp
+  }
+
+  entity "Chat_room" {
+    *id: bigint
+    --
+    *worker_id: bigint <<FK>>
+    *company_id: bigint <<FK>>
+    *created_at: timestamp
+    *updated_at: timestamp
+  }
+
+  entity "Message" {
+    *id: bignt
+    --
+    *chat_room_id: bigint <<FK>>
+    sender_type: tinyint
+    content: text
+    *created_at: timestamp
+    *updated_at: timestamp
+  }
+@enduml
