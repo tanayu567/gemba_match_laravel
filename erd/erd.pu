@@ -7,13 +7,13 @@ skinparam linetype ortho
   Worker ||--|{ Comment
   Worker ||--|{ Like
   Location ||-|{ Comment
-  Location ||-|{ Like
-  Worker ||-|{ Worker_follow
-  Worker ||-|{ Company_follow
-  Company ||-|{ Worker_follow
-  Company ||-|{ Company_follow
+  Location ||--|{ Like
+  Worker_follow }|--|| Worker
+  Company_follow }|--|| Worker
+  Worker_follow }|--|| Company
+  Company_follow }|--|| Company
   Chat_room }|-|| Company
   Chat_room }|-|| Worker
   Message }|-|| Chat_room
-  
+
 @enduml
