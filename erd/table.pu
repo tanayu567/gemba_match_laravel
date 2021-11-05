@@ -60,6 +60,7 @@ hide circle
 
   entity "Like" {
     *id: bigint
+    --
     *worker_id: bigint <<FK>>
     *location_id: bigint <<FK>>
     *created_at: timestamp

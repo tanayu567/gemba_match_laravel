@@ -1,3 +1,19 @@
 @startuml erd
 !include table.pu
+skinparam linetype ortho
+
+  Company ||--|{ Location
+  Company ||--|{ Comment
+  Worker ||--|{ Comment
+  Worker ||--|{ Like
+  Location ||-|{ Comment
+  Location ||-|{ Like
+  Worker ||-|{ Worker_follow
+  Worker ||-|{ Company_follow
+  Company ||-|{ Worker_follow
+  Company ||-|{ Company_follow
+  Chat_room }|-|| Company
+  Chat_room }|-|| Worker
+  Message }|-|| Chat_room
+  
 @enduml
