@@ -7,6 +7,7 @@ use Illuminate\Contracts\Auth\StatefulGuard;
 use Illuminate\Support\Facades\Auth;
 use App\Actions\Worker\AttemptToAuthenticate;
 use Illuminate\Support\ServiceProvider;
+use log;
 
 class WorkerLoginServiceProvider extends ServiceProvider
 {
