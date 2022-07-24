@@ -33,6 +33,5 @@ class WorkerLoginServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
     }
 }
