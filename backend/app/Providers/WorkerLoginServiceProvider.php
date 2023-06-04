@@ -12,6 +12,7 @@ use log;
 class WorkerLoginServiceProvider extends ServiceProvider
 {
     /**
+     *
      * Register services.
      *
      * @return void
